@@ -1,0 +1,23 @@
+{
+  "name": "codeaura",
+  "version": "1.0.0",
+  "description": "CodeAura – A social coding platform",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "dev": "concurrently --kill-others-on-fail --names \"backend,frontend\" --prefix-colors \"magenta,cyan\" \"npm run dev --prefix backend\" \"npm start --prefix frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm start --prefix frontend",
+    "build:backend": "npm run build --prefix backend",
+    "build:frontend": "npm run build --prefix frontend",
+    "build": "npm run build:backend && npm run build:frontend",
+    "test:frontend": "npm test --prefix frontend -- --watchAll=false",
+    "test:backend": "npm test --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": ["codeaura", "social-coding", "platform"],
+  "author": "AFROZ-CK",
+  "license": "ISC"
+}
